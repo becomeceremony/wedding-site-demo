@@ -4,19 +4,20 @@
   <title>Wedding Website</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <!-- Elegant font -->
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&display=swap" rel="stylesheet">
 
   <style>
     body {
       margin: 0;
       font-family: 'Playfair Display', serif;
-      background: #0f0f10;
-      color: #f5f5f5;
+      background: #f6f3ee; /* warm nude */
+      color: #2f3b33;
     }
 
-    /* subtle luxury gold accent */
+    /* 🌿 soft aesthetic accent (not busy) */
     .accent {
-      color: #c9a86a;
+      color: #7a8f7a; /* sage */
     }
 
     /* HERO */
@@ -33,13 +34,14 @@
     .overlay {
       position: absolute;
       inset: 0;
-      background: rgba(0,0,0,0.55);
+      background: rgba(40, 55, 45, 0.35); /* soft sage overlay */
     }
 
     .hero-content {
       position: relative;
       z-index: 2;
       padding: 20px;
+      color: #fff;
     }
 
     h1 {
@@ -50,12 +52,12 @@
     .date {
       font-size: 18px;
       margin-top: 10px;
-      color: #ddd;
+      color: #f3eadf; /* champagne */
     }
 
     .countdown {
       margin-top: 12px;
-      color: #c9a86a;
+      color: #e7dccd;
     }
 
     /* SECTIONS */
@@ -66,21 +68,21 @@
     }
 
     .card {
-      background: #161618;
+      background: #ffffff;
       padding: 32px;
-      border-radius: 14px;
+      border-radius: 16px;
       margin-bottom: 25px;
-      border: 1px solid rgba(201,168,106,0.2);
+      border: 1px solid #e7dccd; /* champagne border */
+      box-shadow: 0 8px 25px rgba(0,0,0,0.04);
     }
 
     h2 {
-      color: #c9a86a;
+      color: #7a8f7a; /* sage headers */
     }
 
-    /* STORY */
     p {
       line-height: 1.7;
-      color: #e6e6e6;
+      color: #3a463f;
     }
 
     /* GALLERY */
@@ -94,44 +96,41 @@
       width: 100%;
       height: 220px;
       object-fit: cover;
-      border-radius: 10px;
+      border-radius: 12px;
     }
 
     /* BUTTON */
     .button {
       display: inline-block;
       padding: 14px 26px;
-      background: #c9a86a;
-      color: black;
+      background: #7a8f7a; /* sage */
+      color: white;
       text-decoration: none;
-      border-radius: 8px;
+      border-radius: 10px;
       margin-top: 10px;
-      font-weight: bold;
+      font-weight: 500;
     }
 
-    /* MAP */
     iframe {
       width: 100%;
       height: 320px;
       border: 0;
-      border-radius: 10px;
+      border-radius: 12px;
       margin-top: 10px;
     }
 
-    /* PARTY */
     .roles p {
       margin: 14px 0;
     }
 
-    /* FOOTER */
     footer {
       text-align: center;
       padding: 40px;
       font-size: 13px;
-      color: #777;
+      color: #8b8b8b;
     }
 
-    /* MOBILE OPTIMIZATION */
+    /* MOBILE */
     @media (max-width: 600px) {
       h1 { font-size: 40px; }
       .section { margin: 40px auto; }
@@ -146,7 +145,7 @@
   <div class="hero">
     <div class="overlay"></div>
     <div class="hero-content">
-      <h1>John <span class="accent">&</span> Emma</h1>
+      <h1>Lindsey <span class="accent">&</span> Beckett</h1>
       <div class="date">June 15, 2027 • Denver, Colorado</div>
       <div class="countdown" id="countdown"></div>
     </div>
@@ -204,11 +203,10 @@
     </div>
   </div>
 
-  <!-- DIRECTIONS (FIXED GOOGLE MAP) -->
+  <!-- DIRECTIONS -->
   <div class="section">
     <div class="card">
       <h2>Directions</h2>
-
       <iframe
         src="https://www.google.com/maps?q=Denver+Colorado&output=embed">
       </iframe>
@@ -231,8 +229,8 @@
     <div class="card roles">
       <h2>Wedding Party</h2>
 
-      <p><strong>Bride:</strong> Emma</p>
-      <p><strong>Groom:</strong> John</p>
+      <p><strong>Bride:</strong> Lindsey</p>
+      <p><strong>Groom:</strong> Beckett</p>
       <p><strong>Maid of Honor:</strong> Sarah Johnson</p>
       <p><strong>Matron of Honor:</strong> Jessica Lee</p>
       <p><strong>Best Man:</strong> Michael Brown</p>
