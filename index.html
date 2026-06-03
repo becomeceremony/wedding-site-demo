@@ -4,69 +4,42 @@
   <title>Wedding Website</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- Fancy font -->
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&display=swap" rel="stylesheet">
 
   <style>
     body {
       margin: 0;
       font-family: 'Playfair Display', serif;
-      background: #f7f5f2;
-      color: #2b2b2b;
+      background: #0f0f10;
+      color: #f5f5f5;
     }
 
-    /* 🌿 vines */
-    body::before,
-    body::after {
-      content: "🌿🌹🌿";
-      position: fixed;
-      font-size: 40px;
-      opacity: 0.5;
-      z-index: 999;
+    /* subtle luxury gold accent */
+    .accent {
+      color: #c9a86a;
     }
 
-    body::before { top: 10px; left: 10px; }
-    body::after { bottom: 10px; right: 10px; transform: rotate(180deg); }
-
-    /* ✨ fade-in animation */
-    .section, .hero {
-      opacity: 0;
-      transform: translateY(20px);
-      animation: fadeIn 1s ease forwards;
-    }
-
-    .section:nth-child(2) { animation-delay: 0.1s; }
-    .section:nth-child(3) { animation-delay: 0.2s; }
-    .section:nth-child(4) { animation-delay: 0.3s; }
-    .section:nth-child(5) { animation-delay: 0.4s; }
-
-    @keyframes fadeIn {
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
+    /* HERO */
     .hero {
-      height: 80vh;
-      background: url(https://images.unsplash.com/photo-1779893529816-e6f028209a3d?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NTZ8fG1vdW50YWluJTIwd2VkZGluZ3xlbnwwfHwwfHx8MA%3D%3D) center/cover no-repeat;
+      height: 85vh;
+      background: url('https://images.unsplash.com/photo-1779893529816-e6f028209a3d?w=1200') center/cover no-repeat;
       display: flex;
       align-items: center;
       justify-content: center;
       text-align: center;
-      color: white;
       position: relative;
     }
 
     .overlay {
       position: absolute;
       inset: 0;
-      background: rgba(0,0,0,0.4);
+      background: rgba(0,0,0,0.55);
     }
 
     .hero-content {
       position: relative;
       z-index: 2;
+      padding: 20px;
     }
 
     h1 {
@@ -75,16 +48,17 @@
     }
 
     .date {
-      font-size: 20px;
+      font-size: 18px;
       margin-top: 10px;
+      color: #ddd;
     }
 
     .countdown {
-      margin-top: 15px;
-      font-size: 18px;
-      color: #fff;
+      margin-top: 12px;
+      color: #c9a86a;
     }
 
+    /* SECTIONS */
     .section {
       max-width: 900px;
       margin: 70px auto;
@@ -92,17 +66,28 @@
     }
 
     .card {
-      background: white;
-      padding: 35px;
+      background: #161618;
+      padding: 32px;
       border-radius: 14px;
       margin-bottom: 25px;
-      box-shadow: 0 8px 25px rgba(0,0,0,0.06);
+      border: 1px solid rgba(201,168,106,0.2);
     }
 
+    h2 {
+      color: #c9a86a;
+    }
+
+    /* STORY */
+    p {
+      line-height: 1.7;
+      color: #e6e6e6;
+    }
+
+    /* GALLERY */
     .gallery {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 12px;
+      gap: 10px;
     }
 
     .gallery img {
@@ -112,36 +97,45 @@
       border-radius: 10px;
     }
 
+    /* BUTTON */
     .button {
       display: inline-block;
       padding: 14px 26px;
-      background: #111;
-      color: white;
+      background: #c9a86a;
+      color: black;
       text-decoration: none;
       border-radius: 8px;
       margin-top: 10px;
+      font-weight: bold;
     }
 
-    .center { text-align: center; }
-
-    .roles p {
-      margin: 14px 0;
-      font-size: 17px;
-    }
-
+    /* MAP */
     iframe {
       width: 100%;
-      height: 300px;
+      height: 320px;
       border: 0;
       border-radius: 10px;
       margin-top: 10px;
     }
 
+    /* PARTY */
+    .roles p {
+      margin: 14px 0;
+    }
+
+    /* FOOTER */
     footer {
       text-align: center;
       padding: 40px;
-      font-size: 14px;
+      font-size: 13px;
       color: #777;
+    }
+
+    /* MOBILE OPTIMIZATION */
+    @media (max-width: 600px) {
+      h1 { font-size: 40px; }
+      .section { margin: 40px auto; }
+      .card { padding: 22px; }
     }
   </style>
 </head>
@@ -152,7 +146,7 @@
   <div class="hero">
     <div class="overlay"></div>
     <div class="hero-content">
-      <h1>John & Emma</h1>
+      <h1>John <span class="accent">&</span> Emma</h1>
       <div class="date">June 15, 2027 • Denver, Colorado</div>
       <div class="countdown" id="countdown"></div>
     </div>
@@ -164,25 +158,23 @@
       <h2>Our Story</h2>
       <p>
         We met in a way neither of us expected.<br>
-        It started as something small, almost insignificant.<br>
-        But something about it felt different from the beginning.<br>
-        We talked for hours without noticing time passing.<br>
-        Slowly, those conversations became daily routines.<br>
-        Then those routines became something we looked forward to.<br>
-        We learned each other’s habits, fears, and dreams.<br>
-        We grew through school, stress, and change together.<br>
-        There were moments we laughed until it hurt.<br>
-        And moments where life felt heavy and uncertain.<br>
-        But we never stopped showing up for each other.<br>
-        Over time, it stopped feeling like “just dating.”<br>
-        It started feeling like building a life together.<br>
-        We supported each other’s goals and growth.<br>
-        We became each other’s calm in chaos.<br>
-        And each other’s motivation when things got hard.<br>
-        Somewhere along the way, love became certainty.<br>
-        Not loud or dramatic, but steady and real.<br>
+        It started small, almost unnoticeable at first.<br>
+        But something about it felt different immediately.<br>
+        We talked longer than we ever meant to.<br>
+        Then those conversations became daily.<br>
+        Then daily became natural.<br>
+        And natural became necessary.<br>
+        We grew through school, stress, and life changes.<br>
+        We learned patience, timing, and understanding.<br>
+        We saw each other at our best and worst.<br>
+        And never stopped choosing each other.<br>
+        Somewhere along the way, it stopped being “dating.”<br>
+        It became building a life.<br>
+        A shared rhythm.<br>
+        A shared direction.<br>
+        A shared future.<br>
         Now we are ready for the next chapter.<br>
-        And we are excited to share this moment with you.
+        And we are grateful to share it with you.
       </p>
     </div>
   </div>
@@ -192,12 +184,12 @@
     <div class="card">
       <h2>Gallery</h2>
       <div class="gallery">
-        <img src="https://images.unsplash.com/photo-1731445289819-ed2efbdb9d83?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8dmFpbCUyMGNvbG9yYWRvfGVufDB8fDB8fHww">
-        <img src="https://images.unsplash.com/photo-1600477315512-9c8bffa16e51?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8dmFpbCUyMGNvbG9yYWRvfGVufDB8fDB8fHww">
-        <img src="https://images.unsplash.com/photo-1669735700421-31e431a3845b?q=80&w=1035&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">
-        <img src="https://images.unsplash.com/photo-1731445289819-ed2efbdb9d83?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8dmFpbCUyMGNvbG9yYWRvfGVufDB8fDB8fHww">
-        <img src="https://images.unsplash.com/photo-1600477315512-9c8bffa16e51?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8dmFpbCUyMGNvbG9yYWRvfGVufDB8fDB8fHww">
-        <img src="https://images.unsplash.com/photo-1669735700421-31e431a3845b?q=80&w=1035&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">
+        <img src="https://images.unsplash.com/photo-1523438097201-512ae7d59c6b">
+        <img src="https://images.unsplash.com/photo-1520854221256-17451cc331bf">
+        <img src="https://images.unsplash.com/photo-1523437237164-d442d57cc3c9">
+        <img src="https://images.unsplash.com/photo-1519741497674-611481863552">
+        <img src="https://images.unsplash.com/photo-1523438097201-512ae7d59c6b?2">
+        <img src="https://images.unsplash.com/photo-1523438097201-512ae7d59c6b?3">
       </div>
     </div>
   </div>
@@ -212,31 +204,29 @@
     </div>
   </div>
 
-  <!-- DIRECTIONS (GOOGLE MAP) -->
+  <!-- DIRECTIONS (FIXED GOOGLE MAP) -->
   <div class="section">
     <div class="card">
       <h2>Directions</h2>
-      <p>Venue: Replace with real address</p>
 
       <iframe
-        src="1326 Spraddle Creek Rd - Google Maps "
-        allowfullscreen>
+        src="https://www.google.com/maps?q=Denver+Colorado&output=embed">
       </iframe>
     </div>
   </div>
 
   <!-- RSVP -->
-  <div class="section center">
+  <div class="section">
     <div class="card">
       <h2>RSVP</h2>
-      <p>Please let us know if you’ll be joining us!</p>
+      <p>Please let us know if you’ll be joining us.</p>
       <a class="button" href="https://forms.gle/your-google-form-link" target="_blank">
         RSVP Here
       </a>
     </div>
   </div>
 
-  <!-- WEDDING PARTY -->
+  <!-- PARTY -->
   <div class="section">
     <div class="card roles">
       <h2>Wedding Party</h2>
@@ -253,31 +243,23 @@
     </div>
   </div>
 
-  <!-- REGISTRY -->
-  <div class="section">
-    <div class="card center">
-      <h2>Registry</h2>
-      <p>Amazon • Target • Honeyfund</p>
-    </div>
-  </div>
-
   <!-- FOOTER -->
   <footer>
     designed by BecomeCeremony
   </footer>
 
-  <!-- COUNTDOWN SCRIPT -->
+  <!-- COUNTDOWN -->
   <script>
     const weddingDate = new Date("June 15, 2027 16:00:00").getTime();
 
-    const x = setInterval(function() {
+    const x = setInterval(function () {
       const now = new Date().getTime();
       const distance = weddingDate - now;
 
       const days = Math.floor(distance / (1000 * 60 * 60 * 24));
 
       document.getElementById("countdown").innerHTML =
-        days + " days until we say I do";
+        days + " days until the wedding";
 
       if (distance < 0) {
         clearInterval(x);
