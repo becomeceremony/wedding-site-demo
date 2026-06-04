@@ -1,270 +1,404 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Wedding Website</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
-  <!-- Elegant font -->
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&display=swap" rel="stylesheet">
+<title>Matilda & Nick | Wedding</title>
 
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Playfair Display', serif;
-      background: #f6f3ee; /* warm nude */
-      color: #2f3b33;
-    }
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 
-    /* 🌿 soft aesthetic accent (not busy) */
-    .accent {
-      color: #7a8f7a; /* sage */
-    }
+<style>
+/* =========================
+   GLOBAL DESIGN SYSTEM
+========================= */
+:root{
+  --sage:#7a8f7a;
+  --nude:#f6f3ee;
+  --champagne:#e7dccd;
+  --text:#2f3b33;
+  --muted:#6b746c;
+  --card:#ffffff;
+}
 
-    /* HERO */
-    .hero {
-      height: 85vh;
-      background: url('https://images.unsplash.com/photo-1779893529816-e6f028209a3d?w=1200') center/cover no-repeat;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      position: relative;
-    }
+*{margin:0;padding:0;box-sizing:border-box}
 
-    .overlay {
-      position: absolute;
-      inset: 0;
-      background: rgba(40, 55, 45, 0.35); /* soft sage overlay */
-    }
+body{
+  font-family: Inter, sans-serif;
+  background: var(--nude);
+  color: var(--text);
+}
 
-    .hero-content {
-      position: relative;
-      z-index: 2;
-      padding: 20px;
-      color: #fff;
-    }
+/* =========================
+   HERO
+========================= */
+.hero{
+  height: 90vh;
+  background: url("https://images.unsplash.com/photo-1523438097201-512ae7d59c6b?auto=format&fit=crop&w=1600&q=80") center/cover no-repeat;
+  position: relative;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+}
 
-    h1 {
-      font-size: 64px;
-      margin: 0;
-    }
+.hero::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background: rgba(35,45,38,0.45);
+}
 
-    .date {
-      font-size: 18px;
-      margin-top: 10px;
-      color: #f3eadf; /* champagne */
-    }
+.hero-content{
+  position:relative;
+  z-index:2;
+  color:white;
+  padding:20px;
+}
 
-    .countdown {
-      margin-top: 12px;
-      color: #e7dccd;
-    }
+.hero h1{
+  font-family: "Playfair Display", serif;
+  font-size: clamp(42px,6vw,80px);
+  letter-spacing: 1px;
+}
 
-    /* SECTIONS */
-    .section {
-      max-width: 900px;
-      margin: 70px auto;
-      padding: 0 20px;
-    }
+.hero p{
+  margin-top:10px;
+  color:#f3eadf;
+  font-size:16px;
+}
 
-    .card {
-      background: #ffffff;
-      padding: 32px;
-      border-radius: 16px;
-      margin-bottom: 25px;
-      border: 1px solid #e7dccd; /* champagne border */
-      box-shadow: 0 8px 25px rgba(0,0,0,0.04);
-    }
+.countdown{
+  margin-top:18px;
+  font-size:14px;
+  color:#e7dccd;
+  letter-spacing:1px;
+}
 
-    h2 {
-      color: #7a8f7a; /* sage headers */
-    }
+/* =========================
+   SECTIONS
+========================= */
+.section{
+  max-width:1100px;
+  margin:70px auto;
+  padding:0 20px;
+}
 
-    p {
-      line-height: 1.7;
-      color: #3a463f;
-    }
+.card{
+  background:var(--card);
+  padding:40px;
+  border-radius:18px;
+  border:1px solid var(--champagne);
+  box-shadow:0 10px 30px rgba(0,0,0,0.05);
+}
 
-    /* GALLERY */
-    .gallery {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 10px;
-    }
+h2{
+  font-family:"Playfair Display", serif;
+  color:var(--sage);
+  margin-bottom:20px;
+  font-size:28px;
+}
 
-    .gallery img {
-      width: 100%;
-      height: 220px;
-      object-fit: cover;
-      border-radius: 12px;
-    }
+p{
+  line-height:1.8;
+  color:var(--text);
+}
 
-    /* BUTTON */
-    .button {
-      display: inline-block;
-      padding: 14px 26px;
-      background: #7a8f7a; /* sage */
-      color: white;
-      text-decoration: none;
-      border-radius: 10px;
-      margin-top: 10px;
-      font-weight: 500;
-    }
+/* =========================
+   STORY TIMELINE UPGRADE
+========================= */
+.timeline{
+  border-left:2px solid var(--sage);
+  padding-left:20px;
+}
 
-    iframe {
-      width: 100%;
-      height: 320px;
-      border: 0;
-      border-radius: 12px;
-      margin-top: 10px;
-    }
+.timeline div{
+  margin-bottom:18px;
+  position:relative;
+}
 
-    .roles p {
-      margin: 14px 0;
-    }
+.timeline div::before{
+  content:"";
+  width:10px;height:10px;
+  background:var(--sage);
+  border-radius:50%;
+  position:absolute;
+  left:-26px;
+  top:6px;
+}
 
-    footer {
-      text-align: center;
-      padding: 40px;
-      font-size: 13px;
-      color: #8b8b8b;
-    }
+/* =========================
+   GALLERY + LIGHTBOX
+========================= */
+.gallery{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+  gap:12px;
+}
 
-    /* MOBILE */
-    @media (max-width: 600px) {
-      h1 { font-size: 40px; }
-      .section { margin: 40px auto; }
-      .card { padding: 22px; }
-    }
-  </style>
+.gallery img{
+  width:100%;
+  height:220px;
+  object-fit:cover;
+  border-radius:12px;
+  cursor:pointer;
+  transition:0.3s;
+}
+
+.gallery img:hover{
+  transform:scale(1.02);
+}
+
+/* LIGHTBOX */
+.lightbox{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,0.85);
+  display:none;
+  align-items:center;
+  justify-content:center;
+  z-index:999;
+}
+
+.lightbox img{
+  max-width:90%;
+  max-height:80vh;
+  border-radius:12px;
+}
+
+/* =========================
+   INFO GRID
+========================= */
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+  gap:16px;
+}
+
+.box{
+  padding:20px;
+  border:1px solid var(--champagne);
+  border-radius:14px;
+  background:#fff;
+}
+
+/* BUTTON */
+.button{
+  display:inline-block;
+  margin-top:10px;
+  padding:14px 22px;
+  background:var(--sage);
+  color:white;
+  text-decoration:none;
+  border-radius:10px;
+  font-weight:500;
+}
+
+/* FOOTER */
+footer{
+  text-align:center;
+  padding:50px 20px;
+  font-size:12px;
+  color:#8b8b8b;
+}
+
+/* MOBILE */
+@media(max-width:600px){
+  .card{padding:24px}
+}
+</style>
 </head>
 
 <body>
 
-  <!-- HERO -->
-  <div class="hero">
-    <div class="overlay"></div>
-    <div class="hero-content">
-      <h1>Lindsey <span class="accent">&</span> Beckett</h1>
-      <div class="date">June 15, 2027 • Denver, Colorado</div>
-      <div class="countdown" id="countdown"></div>
+<!-- =========================
+     HERO (EDIT HERE)
+========================= -->
+<div class="hero">
+
+  <div class="hero-content">
+
+    <!-- EDIT COUPLE NAME -->
+    <h1>Matilda <span style="color:#e7dccd">&</span> Nick</h1>
+
+    <!-- EDIT DATE + LOCATION -->
+    <p>August 28, 2027 • Denver, Colorado</p>
+
+    <!-- COUNTDOWN -->
+    <div class="countdown" id="countdown"></div>
+
+  </div>
+</div>
+
+<!-- =========================
+     STORY (EDIT HERE)
+========================= -->
+<div class="section">
+  <div class="card">
+    <h2>Our Story</h2>
+
+    <!-- EDIT STORY BELOW -->
+    <div class="timeline">
+      <div>We met in a moment we didn’t realize mattered yet.</div>
+      <div>Small conversations became something we looked forward to.</div>
+      <div>Life kept moving, but so did we — together.</div>
+      <div>We grew through everything: school, change, and uncertainty.</div>
+      <div>Eventually, it stopped feeling like “dating” and started feeling like home.</div>
+      <div>Now we’re here — ready for forever.</div>
     </div>
   </div>
+</div>
 
-  <!-- STORY -->
-  <div class="section">
-    <div class="card">
-      <h2>Our Story</h2>
-      <p>
-        We met in a way neither of us expected.<br>
-        It started small, almost unnoticeable at first.<br>
-        But something about it felt different immediately.<br>
-        We talked longer than we ever meant to.<br>
-        Then those conversations became daily.<br>
-        Then daily became natural.<br>
-        And natural became necessary.<br>
-        We grew through school, stress, and life changes.<br>
-        We learned patience, timing, and understanding.<br>
-        We saw each other at our best and worst.<br>
-        And never stopped choosing each other.<br>
-        Somewhere along the way, it stopped being “dating.”<br>
-        It became building a life.<br>
-        A shared rhythm.<br>
-        A shared direction.<br>
-        A shared future.<br>
-        Now we are ready for the next chapter.<br>
-        And we are grateful to share it with you.
-      </p>
+<!-- =========================
+     DETAILS
+========================= -->
+<div class="section">
+  <div class="card">
+    <h2>Wedding Details</h2>
+
+    <div class="grid">
+
+      <div class="box">
+        <strong>Date</strong>
+        <p>August 28, 2027</p>
+      </div>
+
+      <div class="box">
+        <strong>Time</strong>
+        <p>4:00 PM</p>
+      </div>
+
+      <div class="box">
+        <strong>Location</strong>
+        <p>Denver, Colorado</p>
+      </div>
+
+    </div>
+
+  </div>
+</div>
+
+<!-- =========================
+     MAP
+========================= -->
+<div class="section">
+  <div class="card">
+    <h2>Venue</h2>
+
+    <!-- EDIT MAP LINK -->
+    <iframe
+      src="https://www.google.com/maps?q=Denver+Colorado&output=embed"
+      style="width:100%;height:320px;border:0;border-radius:12px;">
+    </iframe>
+
+  </div>
+</div>
+
+<!-- =========================
+     GALLERY (EDIT IMAGES HERE)
+========================= -->
+<div class="section">
+  <div class="card">
+    <h2>Gallery</h2>
+
+    <div class="gallery">
+
+      <!-- REPLACE IMAGES -->
+      <img src="https://images.unsplash.com/photo-1523438097201-512ae7d59c6b" onclick="openImg(this)">
+      <img src="https://images.unsplash.com/photo-1523437237164-d442d57cc3c9" onclick="openImg(this)">
+      <img src="https://images.unsplash.com/photo-1520854221256-17451cc331bf" onclick="openImg(this)">
+      <img src="https://images.unsplash.com/photo-1519741497674-611481863552" onclick="openImg(this)">
+
     </div>
   </div>
+</div>
 
-  <!-- GALLERY -->
-  <div class="section">
-    <div class="card">
-      <h2>Gallery</h2>
-      <div class="gallery">
-        <img src="https://images.unsplash.com/photo-1523438097201-512ae7d59c6b">
-        <img src="https://images.unsplash.com/photo-1520854221256-17451cc331bf">
-        <img src="https://images.unsplash.com/photo-1523437237164-d442d57cc3c9">
-        <img src="https://images.unsplash.com/photo-1519741497674-611481863552">
-        <img src="https://images.unsplash.com/photo-1523438097201-512ae7d59c6b?2">
-        <img src="https://images.unsplash.com/photo-1523438097201-512ae7d59c6b?3">
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox" onclick="closeImg()">
+  <img id="lightbox-img">
+</div>
+
+<!-- =========================
+     RSVP
+========================= -->
+<div class="section">
+  <div class="card">
+    <h2>RSVP</h2>
+    <p>Please let us know if you’ll be joining us.</p>
+
+    <!-- EDIT FORM LINK -->
+    <a class="button" href="https://forms.gle/your-link-here" target="_blank">
+      RSVP Here
+    </a>
+  </div>
+</div>
+
+<!-- =========================
+     TRAVEL (HIGH VALUE ADD)
+========================= -->
+<div class="section">
+  <div class="card">
+    <h2>Travel & Stay</h2>
+
+    <div class="grid">
+      <div class="box">
+        <strong>Hotels</strong>
+        <p>Recommended nearby stays will be listed here.</p>
+      </div>
+
+      <div class="box">
+        <strong>Airport</strong>
+        <p>Denver International Airport (DEN)</p>
+      </div>
+
+      <div class="box">
+        <strong>Transportation</strong>
+        <p>Uber / Lyft recommended</p>
       </div>
     </div>
+
   </div>
+</div>
 
-  <!-- DETAILS -->
-  <div class="section">
-    <div class="card">
-      <h2>Wedding Details</h2>
-      <p><strong>Date:</strong> June 15, 2027</p>
-      <p><strong>Location:</strong> Denver, Colorado</p>
-      <p><strong>Time:</strong> 4:00 PM</p>
-    </div>
-  </div>
+<!-- =========================
+     FOOTER
+========================= -->
+<footer>
+  Designed with love • Matilda & Nick Wedding Site
+</footer>
 
-  <!-- DIRECTIONS -->
-  <div class="section">
-    <div class="card">
-      <h2>Directions</h2>
-      <iframe
-        src="https://www.google.com/maps?q=Denver+Colorado&output=embed">
-      </iframe>
-    </div>
-  </div>
+<!-- =========================
+     SCRIPTS
+========================= -->
+<script>
 
-  <!-- RSVP -->
-  <div class="section">
-    <div class="card">
-      <h2>RSVP</h2>
-      <p>Please let us know if you’ll be joining us.</p>
-      <a class="button" href="https://forms.gle/your-google-form-link" target="_blank">
-        RSVP Here
-      </a>
-    </div>
-  </div>
+/* COUNTDOWN (EDIT DATE HERE) */
+const weddingDate = new Date("August 28, 2027 16:00:00").getTime();
 
-  <!-- PARTY -->
-  <div class="section">
-    <div class="card roles">
-      <h2>Wedding Party</h2>
+setInterval(() => {
+  const now = new Date().getTime();
+  const distance = weddingDate - now;
 
-      <p><strong>Bride:</strong> Lindsey</p>
-      <p><strong>Groom:</strong> Beckett</p>
-      <p><strong>Maid of Honor:</strong> Sarah Johnson</p>
-      <p><strong>Matron of Honor:</strong> Jessica Lee</p>
-      <p><strong>Best Man:</strong> Michael Brown</p>
-      <p><strong>Bridesmaids:</strong> Olivia, Ava, Mia, Chloe</p>
-      <p><strong>Officiant:</strong> Pastor Daniel Smith</p>
-      <p><strong>Coordinator:</strong> Emily Roberts</p>
-      <p><strong>Parents & Grandparents:</strong> The Johnson & Smith Families</p>
-    </div>
-  </div>
+  const days = Math.floor(distance / (1000 * 60 * 60 * 24));
 
-  <!-- FOOTER -->
-  <footer>
-    designed by BecomeCeremony
-  </footer>
+  document.getElementById("countdown").innerText =
+    days + " days until the wedding";
 
-  <!-- COUNTDOWN -->
-  <script>
-    const weddingDate = new Date("June 15, 2027 16:00:00").getTime();
+}, 1000);
 
-    const x = setInterval(function () {
-      const now = new Date().getTime();
-      const distance = weddingDate - now;
 
-      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+/* LIGHTBOX */
+function openImg(img){
+  document.getElementById("lightbox").style.display = "flex";
+  document.getElementById("lightbox-img").src = img.src;
+}
 
-      document.getElementById("countdown").innerHTML =
-        days + " days until the wedding";
+function closeImg(){
+  document.getElementById("lightbox").style.display = "none";
+}
 
-      if (distance < 0) {
-        clearInterval(x);
-        document.getElementById("countdown").innerHTML = "Today is the day ❤️";
-      }
-    }, 1000);
-  </script>
+</script>
 
 </body>
 </html>
