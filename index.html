@@ -4,289 +4,705 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Matilda & Nick | Wedding</title>
+<title>Wyatt & Annabelle | June 27, 2026</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-<style>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 
-/* =========================
-   LUXURY SAGE SYSTEM (SOFT EDITORIAL)
-========================= */
-:root{
-  --sage:#7c8f7b;
-  --sage-dark:#5f6f5e;
-  --champagne:#f3eadf;
-  --cream:#fbfaf7;
-  --text:#2f3b33;
-  --muted:#6d776f;
-}
-
-*{margin:0;padding:0;box-sizing:border-box}
-
-body{
-  font-family: Inter, sans-serif;
-  background: var(--cream);
-  color: var(--text);
-}
-
-/* subtle paper texture */
-body::before{
-  content:"";
-  position:fixed;
-  inset:0;
-  background:url("https://www.transparenttextures.com/patterns/paper-fibers.png");
-  opacity:0.08;
-  pointer-events:none;
-}
-
-/* =========================
-   HERO (CINEMATIC + SPLIT)
-========================= */
-.hero{
-  height:100vh;
-  display:grid;
-  grid-template-columns:1fr 1fr;
-}
-
-.hero-left{
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-  padding:80px;
-  background:var(--cream);
-}
-
-.hero-right{
-  background:url("https://images.unsplash.com/photo-1523438097201-512ae7d59c6b?auto=format&fit=crop&w=1600&q=80") center/cover no-repeat;
-}
-
-.hero h1{
-  font-family:"Playfair Display", serif;
-  font-size:72px;
-}
-
-.hero p{
-  margin-top:10px;
-  color:var(--muted);
-}
-
-/* =========================
-   SECTION SYSTEM (LAYERED)
-========================= */
-.section{
-  max-width:1100px;
-  margin:120px auto;
-  padding:0 20px;
-}
-
-/* alternating layout blocks */
-.split{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:40px;
-  align-items:center;
-  margin:90px 0;
-}
-
-.split img{
-  width:100%;
-  border-radius:16px;
-  height:420px;
-  object-fit:cover;
-}
-
-/* story chapters */
-.chapter{
-  padding:60px;
-  background:var(--champagne);
-  border-radius:18px;
-}
-
-/* divider quote blocks */
-.quote{
-  text-align:center;
-  font-family:"Playfair Display", serif;
-  font-size:28px;
-  margin:120px 0;
-  color:var(--sage-dark);
-}
-
-/* =========================
-   FEATURED SPREADS
-========================= */
-.spread{
-  display:grid;
-  grid-template-columns:2fr 1fr 1fr;
-  gap:12px;
-}
-
-.spread img{
-  width:100%;
-  height:320px;
-  object-fit:cover;
-  border-radius:14px;
-}
-
-/* =========================
-   TIMELINE
-========================= */
-.timeline{
-  border-left:2px solid var(--sage);
-  padding-left:30px;
-}
-
-.timeline div{
-  margin:25px 0;
-}
-
-/* =========================
-   DETAILS CARD
-========================= */
-.card{
-  background:white;
-  padding:40px;
-  border-radius:18px;
-  border:1px solid rgba(124,143,123,0.2);
-}
-
-/* =========================
-   GRID
-========================= */
-.grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
-  gap:18px;
-}
-
-.box{
-  padding:20px;
-  border-radius:14px;
-  background:var(--champagne);
-}
-
-/* =========================
-   FOOTER
-========================= */
-footer{
-  text-align:center;
-  padding:80px;
-  color:var(--muted);
-}
-
-</style>
+<link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
 
-<!-- LAYER 1: HERO -->
-<div class="hero">
-
-  <div class="hero-left">
-    <h1>Matilda & Nick</h1>
-    <p>August 28, 2027 • Denver, Colorado</p>
-    <p id="countdown"></p>
-  </div>
-
-  <div class="hero-right"></div>
-
-</div>
-
-<!-- LAYER 2: STORY CHAPTERS -->
-<div class="section">
-
-  <div class="split">
-    <img src="https://images.unsplash.com/photo-1523437237164-d442d57cc3c9">
-    <div class="chapter">
-      <h2>Chapter I — Beginning</h2>
-      <p>We met without knowing what it would become.</p>
-    </div>
-  </div>
-
-  <div class="quote">
-    Some people arrive and change the direction of your life.
-  </div>
-
-  <div class="split">
-    <div class="chapter">
-      <h2>Chapter II — Becoming</h2>
-      <p>What started as moments became something we built our lives around.</p>
-    </div>
-    <img src="https://images.unsplash.com/photo-1520854221256-17451cc331bf">
-  </div>
-
-  <div class="quote">
-    And then it stopped feeling like chance.
-  </div>
-
-  <div class="split">
-    <img src="https://images.unsplash.com/photo-1519741497674-611481863552">
-    <div class="chapter">
-      <h2>Chapter III — Forever</h2>
-      <p>Now we begin something that doesn’t have an ending.</p>
-    </div>
-  </div>
-
-</div>
-
-<!-- FEATURED SPREAD -->
-<div class="section">
-  <h2>Featured Moments</h2>
-
-  <div class="spread">
-    <img src="https://images.unsplash.com/photo-1523438097201-512ae7d59c6b">
-    <img src="https://images.unsplash.com/photo-1523437237164-d442d57cc3c9">
-    <img src="https://images.unsplash.com/photo-1519741497674-611481863552">
-  </div>
-</div>
-
-<!-- EVENT DETAILS -->
-<div class="section">
-  <div class="card">
-    <h2>Wedding Details</h2>
-    <div class="grid">
-      <div class="box">August 28, 2027</div>
-      <div class="box">4:00 PM</div>
-      <div class="box">Denver, Colorado</div>
-    </div>
-  </div>
-</div>
-
-<!-- WEEKEND -->
-<div class="section">
-  <div class="card">
-    <h2>Weekend Experience</h2>
-    <div class="timeline">
-      <div>Friday — Welcome Dinner</div>
-      <div>Saturday — Ceremony & Reception</div>
-      <div>Sunday — Brunch Farewell</div>
-    </div>
-  </div>
-</div>
-
-<!-- MAP -->
-<div class="section">
-  <div class="card">
-    <h2>Venue</h2>
-    <iframe src="https://www.google.com/maps?q=Denver+Colorado&output=embed"
-    style="width:100%;height:320px;border:0;border-radius:12px;"></iframe>
-  </div>
-</div>
-
-<!-- FOOTER -->
-<footer>
-  Matilda & Nick • 2027
-</footer>
+<!-- ========================================= -->
+<!-- EASY EDIT SECTION -->
+<!-- CHANGE ONLY THIS SECTION FOR CLIENTS -->
+<!-- ========================================= -->
 
 <script>
-const weddingDate = new Date("August 28, 2027 16:00:00").getTime();
 
-setInterval(()=>{
-  const now = new Date().getTime();
-  const d = Math.floor((weddingDate-now)/(1000*60*60*24));
-  document.getElementById("countdown").innerText = d + " days until forever";
-},1000);
+const wedding = {
+
+    bride: "Annabelle Kirk",
+    groom: "Wyatt Nichols",
+
+    weddingDate: "June 27, 2026 16:00:00",
+
+    location: "Gallatin, Tennessee",
+
+    venueName: "Venue Name Here",
+
+    venueAddress: "123 Wedding Lane, Gallatin, TN",
+
+    heroImage:
+        "images/hero.jpg",
+
+    story: {
+
+        title1: "How We Met",
+
+        text1:
+        "Write the story here.",
+
+        title2: "First Adventure",
+
+        text2:
+        "Write the story here.",
+
+        title3: "The Proposal",
+
+        text3:
+        "Write the story here."
+
+    },
+
+    gallery: [
+
+        "images/gallery1.jpg",
+        "images/gallery2.jpg",
+        "images/gallery3.jpg",
+        "images/gallery4.jpg",
+        "images/gallery5.jpg",
+        "images/gallery6.jpg"
+
+    ],
+
+    hotels: [
+
+        {
+            name: "Hotel One",
+            description: "5 minutes from venue",
+            link: "#"
+        },
+
+        {
+            name: "Hotel Two",
+            description: "10 minutes from venue",
+            link: "#"
+        }
+
+    ],
+
+    faq: [
+
+        {
+            question: "What should I wear?",
+            answer: "Formal attire requested."
+        },
+
+        {
+            question: "Can I bring a guest?",
+            answer: "Please refer to your invitation."
+        },
+
+        {
+            question: "Are children invited?",
+            answer: "Please refer to invitation details."
+        }
+
+    ],
+
+    registry: [
+
+        {
+            name: "Amazon",
+            link: "#"
+        },
+
+        {
+            name: "Honeyfund",
+            link: "#"
+        }
+
+    ]
+
+};
+
 </script>
 
-</body>
-</html>
+<!-- ========================================= -->
+<!-- NAVIGATION -->
+<!-- ========================================= -->
+
+<nav class="navbar">
+
+    <div class="nav-logo">
+        W & A
+    </div>
+
+    <ul class="nav-links">
+
+        <li>
+            <a href="#story">Story</a>
+        </li>
+
+        <li>
+            <a href="#weekend">Weekend</a>
+        </li>
+
+        <li>
+            <a href="#venue">Venue</a>
+        </li>
+
+        <li>
+            <a href="#gallery">Gallery</a>
+        </li>
+
+        <li>
+            <a href="#travel">Travel</a>
+        </li>
+
+        <li>
+            <a href="#faq">FAQ</a>
+        </li>
+
+        <li>
+            <a href="#rsvp">RSVP</a>
+        </li>
+
+    </ul>
+
+</nav>
+
+<!-- ========================================= -->
+<!-- HERO -->
+<!-- ========================================= -->
+
+<header class="hero">
+
+    <div class="hero-overlay"></div>
+
+    <div class="hero-content">
+
+        <p class="eyebrow">
+            WE'RE GETTING MARRIED
+        </p>
+
+        <h1 id="coupleNames">
+            Wyatt & Annabelle
+        </h1>
+
+        <p class="hero-date">
+            June 27, 2026
+        </p>
+
+        <p class="hero-location">
+            Gallatin, Tennessee
+        </p>
+
+        <div id="countdown">
+
+            <div class="count-box">
+                <span id="days">000</span>
+                <small>DAYS</small>
+            </div>
+
+            <div class="count-box">
+                <span id="hours">00</span>
+                <small>HOURS</small>
+            </div>
+
+            <div class="count-box">
+                <span id="minutes">00</span>
+                <small>MINUTES</small>
+            </div>
+
+        </div>
+
+        <a href="#story" class="hero-button">
+            Our Story
+        </a>
+
+    </div>
+
+</header>
+
+<!-- ========================================= -->
+<!-- WELCOME -->
+<!-- ========================================= -->
+
+<section class="welcome">
+
+    <div class="container">
+
+        <p class="section-tag">
+            WELCOME
+        </p>
+
+        <h2>
+            We Can't Wait To Celebrate With You
+        </h2>
+
+        <p class="large-text">
+
+            Thank you for being part of our lives.
+            We are so excited to gather with our
+            favorite people and celebrate this
+            next chapter together.
+
+        </p>
+
+    </div>
+
+</section>
+
+<!-- ========================================= -->
+<!-- STORY -->
+<!-- ========================================= -->
+
+<section id="story" class="story-section">
+
+    <div class="container">
+
+        <p class="section-tag">
+            OUR STORY
+        </p>
+
+        <h2>
+            A Love Story Years In The Making
+        </h2>
+
+        <div class="timeline">
+
+            <div class="timeline-card">
+
+                <div class="timeline-number">
+                    01
+                </div>
+
+                <h3 id="storyTitle1">
+                    How We Met
+                </h3>
+
+                <p id="storyText1">
+                    Story goes here.
+                </p>
+
+            </div>
+
+            <div class="timeline-card">
+
+                <div class="timeline-number">
+                    02
+                </div>
+
+                <h3 id="storyTitle2">
+                    First Adventure
+                </h3>
+
+                <p id="storyText2">
+                    Story goes here.
+                </p>
+
+            </div>
+
+            <div class="timeline-card">
+
+                <div class="timeline-number">
+                    03
+                </div>
+
+                <h3 id="storyTitle3">
+                    The Proposal
+                </h3>
+
+                <p id="storyText3">
+                    Story goes here.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ========================================= -->
+<!-- WEDDING WEEKEND -->
+<!-- ========================================= -->
+
+<section id="weekend" class="weekend-section">
+
+    <div class="container">
+
+        <p class="section-tag">
+            WEDDING WEEKEND
+        </p>
+
+        <h2>
+            Schedule Of Events
+        </h2>
+
+        <div class="event-grid">
+
+            <div class="event-card">
+
+                <h3>
+                    Ceremony
+                </h3>
+
+                <p>
+                    Saturday • 4:00 PM
+                </p>
+
+            </div>
+
+            <div class="event-card">
+
+                <h3>
+                    Cocktail Hour
+                </h3>
+
+                <p>
+                    Immediately Following
+                </p>
+
+            </div>
+
+            <div class="event-card">
+
+                <h3>
+                    Reception
+                </h3>
+
+                <p>
+                    Dinner & Dancing
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ========================================= -->
+<!-- VENUE -->
+<!-- ========================================= -->
+
+<section id="venue" class="venue-section">
+
+    <div class="container">
+
+        <div class="venue-content">
+
+            <div class="venue-text">
+
+                <p class="section-tag">
+                    VENUE
+                </p>
+
+                <h2 id="venueName">
+                    Venue Name Here
+                </h2>
+
+                <p id="venueAddress">
+                    Venue Address Here
+                </p>
+
+                <a class="primary-btn" href="#">
+                    Get Directions
+                </a>
+
+            </div>
+
+            <div class="venue-image">
+
+                <img
+                    src="images/venue.jpg"
+                    alt="Wedding Venue"
+                >
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<section id="story" class="section">
+  <div class="container">
+    <h2>Our Story</h2>
+
+    <div class="story-grid">
+      <div class="story-card">
+        <h3>How We Met</h3>
+        <p>
+          This is your editable story section. Talk about how you first met,
+          what made it memorable, and what stood out about that moment.
+        </p>
+      </div>
+
+      <div class="story-card">
+        <h3>The First Date</h3>
+        <p>
+          Describe your first date here. Keep it personal, simple, and real.
+        </p>
+      </div>
+
+      <div class="story-card">
+        <h3>The Proposal</h3>
+        <p>
+          Share the proposal story. Where it happened, how it felt, and what led up to it.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="schedule" class="section alt">
+  <div class="container">
+    <h2>Wedding Day Schedule</h2>
+
+    <div class="timeline">
+      <div class="timeline-item">
+        <span class="time">4:00 PM</span>
+        <span class="event">Guests Arrive</span>
+      </div>
+
+      <div class="timeline-item">
+        <span class="time">4:30 PM</span>
+        <span class="event">Ceremony Begins</span>
+      </div>
+
+      <div class="timeline-item">
+        <span class="time">5:15 PM</span>
+        <span class="event">Cocktail Hour</span>
+      </div>
+
+      <div class="timeline-item">
+        <span class="time">6:30 PM</span>
+        <span class="event">Reception & Dinner</span>
+      </div>
+
+      <div class="timeline-item">
+        <span class="time">8:00 PM</span>
+        <span class="event">Dancing</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="gallery" class="section">
+  <div class="container">
+    <h2>Gallery</h2>
+
+    <div class="gallery-grid">
+      <img src="images/photo1.jpg" alt="Gallery photo 1">
+      <img src="images/photo2.jpg" alt="Gallery photo 2">
+      <img src="images/photo3.jpg" alt="Gallery photo 3">
+      <img src="images/photo4.jpg" alt="Gallery photo 4">
+      <img src="images/photo5.jpg" alt="Gallery photo 5">
+      <img src="images/photo6.jpg" alt="Gallery photo 6">
+    </div>
+  </div>
+</section>
+
+<section id="rsvp" class="section alt">
+  <div class="container">
+    <h2>RSVP</h2>
+
+    <form class="rsvp-form">
+      <input type="text" placeholder="Full Name" required>
+
+      <input type="email" placeholder="Email Address" required>
+
+      <select required>
+        <option value="">Will you attend?</option>
+        <option value="yes">Joyfully Accept</option>
+        <option value="no">Regretfully Decline</option>
+      </select>
+
+      <input type="number" placeholder="Number of Guests" min="1" max="5">
+
+      <textarea placeholder="Message (optional)"></textarea>
+
+      <button type="submit">Send RSVP</button>
+    </form>
+  </div>
+</section>
+
+.section {
+  padding: 80px 20px;
+}
+
+.section.alt {
+  background: #f6f2ee;
+}
+
+.story-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  margin-top: 30px;
+}
+
+.story-card {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+}
+
+.timeline {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.timeline-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 12px 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 10px;
+}
+
+.gallery-grid img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.rsvp-form {
+  max-width: 500px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.rsvp-form input,
+.rsvp-form select,
+.rsvp-form textarea {
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+.rsvp-form button {
+  padding: 12px;
+  border: none;
+  background: #7a9e7e;
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+<!-- ===================== LOCATION / MAP ===================== -->
+<section id="location" class="section">
+  <div class="container">
+    <h2>Location</h2>
+    <p class="subtext">Gallatin, Tennessee • June 27, 2026</p>
+
+    <div class="map-wrapper">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3245.0000000000005!2d-86.450000!3d36.387000!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0000000000000000%3AWedding%20Venue!5e0!3m2!1sen!2sus!4v0000000000000"
+        width="100%"
+        height="350"
+        style="border:0;"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== FOOTER ===================== -->
+<footer class="footer">
+  <div class="container">
+    <p>Wyatt Nichols & Annabelle Kirk</p>
+    <p>June 27, 2026 • Gallatin, Tennessee</p>
+    <p class="small">Made with love for our special day</p>
+  </div>
+</footer>
+
+<!-- ===================== SMOOTH SCROLL ===================== -->
+<style>
+html {
+  scroll-behavior: smooth;
+}
+
+/* Map */
+.map-wrapper {
+  margin-top: 20px;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+
+/* Footer */
+.footer {
+  text-align: center;
+  padding: 50px 20px;
+  background: #2f3b33;
+  color: #f5f1ea;
+}
+
+.footer .small {
+  font-size: 12px;
+  opacity: 0.7;
+  margin-top: 10px;
+}
+
+/* Scroll reveal animation */
+.section {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.8s ease;
+}
+
+.section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  h1 { font-size: 32px; }
+  h2 { font-size: 24px; }
+
+  .hero { padding: 100px 15px; }
+
+  .timeline-item {
+    flex-direction: column;
+    gap: 5px;
+    align-items: flex-start;
+  }
+
+  .gallery-grid img {
+    height: 140px;
+  }
+}
+
+/* Optional premium texture */
+body {
+  background-image: radial-gradient(#e9e4dd 1px, transparent 1px);
+  background-size: 22px 22px;
+}
+</style>
+
+<!-- ===================== FADE-IN ON SCROLL JS ===================== -->
+<script>
+  const sections = document.querySelectorAll('.section');
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.15 });
+
+  sections.forEach(section => observer.observe(section));
+</script>
