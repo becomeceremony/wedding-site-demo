@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,84 +11,59 @@
 <style>
 
 /* =========================
-   DARK LUXURY SYSTEM
+   LUXURY SAGE SYSTEM (SOFT EDITORIAL)
 ========================= */
 :root{
-  --bg:#0f1412;
-  --card:#151c18;
-  --muted:#a9b2aa;
-  --text:#f2efe8;
-  --gold:#c8b38b;
-  --green:#2f3d34;
+  --sage:#7c8f7b;
+  --sage-dark:#5f6f5e;
+  --champagne:#f3eadf;
+  --cream:#fbfaf7;
+  --text:#2f3b33;
+  --muted:#6d776f;
 }
 
 *{margin:0;padding:0;box-sizing:border-box}
 
 body{
   font-family: Inter, sans-serif;
-  background: var(--bg);
+  background: var(--cream);
   color: var(--text);
-  overflow-x:hidden;
 }
 
-/* ambient grain overlay */
+/* subtle paper texture */
 body::before{
   content:"";
   position:fixed;
   inset:0;
-  background:url("https://www.transparenttextures.com/patterns/noise.png");
-  opacity:0.06;
+  background:url("https://www.transparenttextures.com/patterns/paper-fibers.png");
+  opacity:0.08;
   pointer-events:none;
 }
 
 /* =========================
-   HERO (CINEMATIC)
+   HERO (CINEMATIC + SPLIT)
 ========================= */
 .hero{
   height:100vh;
-  position:relative;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+}
+
+.hero-left{
   display:flex;
-  align-items:center;
+  flex-direction:column;
   justify-content:center;
-  text-align:center;
-  overflow:hidden;
+  padding:80px;
+  background:var(--cream);
 }
 
-.hero-bg{
-  position:absolute;
-  inset:0;
+.hero-right{
   background:url("https://images.unsplash.com/photo-1523438097201-512ae7d59c6b?auto=format&fit=crop&w=1600&q=80") center/cover no-repeat;
-  transform:scale(1.1);
-  animation: zoom 18s ease-in-out infinite alternate;
-}
-
-@keyframes zoom{
-  from{transform:scale(1.1)}
-  to{transform:scale(1.2)}
-}
-
-.hero-overlay{
-  position:absolute;
-  inset:0;
-  background:linear-gradient(to bottom, rgba(0,0,0,0.55), rgba(15,20,18,0.95));
-}
-
-.hero-content{
-  position:relative;
-  z-index:2;
-  padding:20px;
-  opacity:0;
-  transform:translateY(20px);
-  animation:fadeIn 1.5s ease forwards;
-}
-
-@keyframes fadeIn{
-  to{opacity:1;transform:translateY(0)}
 }
 
 .hero h1{
   font-family:"Playfair Display", serif;
-  font-size:clamp(44px,6vw,84px);
+  font-size:72px;
 }
 
 .hero p{
@@ -97,132 +71,98 @@ body::before{
   color:var(--muted);
 }
 
-.scroll-cue{
-  margin-top:30px;
-  font-size:12px;
-  letter-spacing:2px;
-  opacity:0.6;
-}
-
 /* =========================
-   SECTIONS
+   SECTION SYSTEM (LAYERED)
 ========================= */
 .section{
   max-width:1100px;
-  margin:90px auto;
+  margin:120px auto;
   padding:0 20px;
 }
 
-.card{
-  background:var(--card);
-  border:1px solid rgba(200,179,139,0.15);
-  border-radius:18px;
-  padding:40px;
+/* alternating layout blocks */
+.split{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:40px;
+  align-items:center;
+  margin:90px 0;
 }
 
-h2{
-  font-family:"Playfair Display", serif;
-  color:var(--gold);
-  margin-bottom:20px;
-}
-
-/* =========================
-   STORY (SCROLL STYLE)
-========================= */
-.story-step{
-  margin:40px 0;
-  padding-left:20px;
-  border-left:2px solid rgba(200,179,139,0.4);
-  opacity:0;
-  transform:translateY(20px);
-  animation:fadeUp 1s forwards;
-}
-
-.story-step:nth-child(2){animation-delay:0.2s}
-.story-step:nth-child(3){animation-delay:0.4s}
-.story-step:nth-child(4){animation-delay:0.6s}
-.story-step:nth-child(5){animation-delay:0.8s}
-
-@keyframes fadeUp{
-  to{opacity:1;transform:translateY(0)}
-}
-
-/* =========================
-   FEATURED MOMENTS
-========================= */
-.masonry{
-  column-count:3;
-  column-gap:12px;
-}
-
-.masonry img{
+.split img{
   width:100%;
-  margin-bottom:12px;
-  border-radius:12px;
-  break-inside:avoid;
-  filter:contrast(1.05);
-  transition:0.3s;
+  border-radius:16px;
+  height:420px;
+  object-fit:cover;
 }
 
-.masonry img:hover{
-  transform:scale(1.02);
+/* story chapters */
+.chapter{
+  padding:60px;
+  background:var(--champagne);
+  border-radius:18px;
+}
+
+/* divider quote blocks */
+.quote{
+  text-align:center;
+  font-family:"Playfair Display", serif;
+  font-size:28px;
+  margin:120px 0;
+  color:var(--sage-dark);
 }
 
 /* =========================
-   GRID SECTIONS
+   FEATURED SPREADS
+========================= */
+.spread{
+  display:grid;
+  grid-template-columns:2fr 1fr 1fr;
+  gap:12px;
+}
+
+.spread img{
+  width:100%;
+  height:320px;
+  object-fit:cover;
+  border-radius:14px;
+}
+
+/* =========================
+   TIMELINE
+========================= */
+.timeline{
+  border-left:2px solid var(--sage);
+  padding-left:30px;
+}
+
+.timeline div{
+  margin:25px 0;
+}
+
+/* =========================
+   DETAILS CARD
+========================= */
+.card{
+  background:white;
+  padding:40px;
+  border-radius:18px;
+  border:1px solid rgba(124,143,123,0.2);
+}
+
+/* =========================
+   GRID
 ========================= */
 .grid{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
-  gap:16px;
+  gap:18px;
 }
 
 .box{
-  background:#101613;
   padding:20px;
   border-radius:14px;
-  border:1px solid rgba(200,179,139,0.12);
-}
-
-/* =========================
-   BUTTONS
-========================= */
-.button{
-  display:inline-block;
-  margin-top:10px;
-  padding:14px 22px;
-  background:var(--gold);
-  color:#111;
-  border-radius:10px;
-  text-decoration:none;
-  font-weight:500;
-}
-
-/* =========================
-   MAP
-========================= */
-iframe{
-  width:100%;
-  height:320px;
-  border:0;
-  border-radius:12px;
-}
-
-/* =========================
-   AUDIO TOGGLE
-========================= */
-#audioBtn{
-  position:fixed;
-  bottom:20px;
-  right:20px;
-  background:rgba(0,0,0,0.6);
-  border:1px solid rgba(255,255,255,0.2);
-  color:white;
-  padding:10px 14px;
-  border-radius:999px;
-  cursor:pointer;
-  z-index:999;
-  font-size:12px;
+  background:var(--champagne);
 }
 
 /* =========================
@@ -230,17 +170,8 @@ iframe{
 ========================= */
 footer{
   text-align:center;
-  padding:60px 20px;
+  padding:80px;
   color:var(--muted);
-  font-size:12px;
-}
-
-@media(max-width:900px){
-  .masonry{column-count:2;}
-}
-@media(max-width:600px){
-  .masonry{column-count:1;}
-  .card{padding:24px;}
 }
 
 </style>
@@ -248,85 +179,88 @@ footer{
 
 <body>
 
-<!-- HERO -->
+<!-- LAYER 1: HERO -->
 <div class="hero">
-  <div class="hero-bg"></div>
-  <div class="hero-overlay"></div>
 
-  <div class="hero-content">
+  <div class="hero-left">
     <h1>Matilda & Nick</h1>
     <p>August 28, 2027 • Denver, Colorado</p>
     <p id="countdown"></p>
-    <div class="scroll-cue">SCROLL TO ENTER</div>
   </div>
+
+  <div class="hero-right"></div>
+
 </div>
 
-<!-- STORY -->
+<!-- LAYER 2: STORY CHAPTERS -->
 <div class="section">
-  <div class="card">
-    <h2>Our Story</h2>
 
-    <div class="story-step">We met in a moment that didn’t feel important at first.</div>
-    <div class="story-step">Then it became the moment everything else revolved around.</div>
-    <div class="story-step">We didn’t plan anything — it just kept happening.</div>
-    <div class="story-step">And somewhere in the middle, it stopped being accidental.</div>
-    <div class="story-step">It became inevitable.</div>
-
-  </div>
-</div>
-
-<!-- FEATURED MOMENTS -->
-<div class="section">
-  <div class="card">
-    <h2>Featured Moments</h2>
-
-    <div class="masonry">
-      <img src="https://images.unsplash.com/photo-1523438097201-512ae7d59c6b">
-      <img src="https://images.unsplash.com/photo-1520854221256-17451cc331bf">
-      <img src="https://images.unsplash.com/photo-1519741497674-611481863552">
-      <img src="https://images.unsplash.com/photo-1523437237164-d442d57cc3c9">
-      <img src="https://images.unsplash.com/photo-1523438097201-512ae7d59c6b?2">
+  <div class="split">
+    <img src="https://images.unsplash.com/photo-1523437237164-d442d57cc3c9">
+    <div class="chapter">
+      <h2>Chapter I — Beginning</h2>
+      <p>We met without knowing what it would become.</p>
     </div>
+  </div>
 
+  <div class="quote">
+    Some people arrive and change the direction of your life.
+  </div>
+
+  <div class="split">
+    <div class="chapter">
+      <h2>Chapter II — Becoming</h2>
+      <p>What started as moments became something we built our lives around.</p>
+    </div>
+    <img src="https://images.unsplash.com/photo-1520854221256-17451cc331bf">
+  </div>
+
+  <div class="quote">
+    And then it stopped feeling like chance.
+  </div>
+
+  <div class="split">
+    <img src="https://images.unsplash.com/photo-1519741497674-611481863552">
+    <div class="chapter">
+      <h2>Chapter III — Forever</h2>
+      <p>Now we begin something that doesn’t have an ending.</p>
+    </div>
+  </div>
+
+</div>
+
+<!-- FEATURED SPREAD -->
+<div class="section">
+  <h2>Featured Moments</h2>
+
+  <div class="spread">
+    <img src="https://images.unsplash.com/photo-1523438097201-512ae7d59c6b">
+    <img src="https://images.unsplash.com/photo-1523437237164-d442d57cc3c9">
+    <img src="https://images.unsplash.com/photo-1519741497674-611481863552">
   </div>
 </div>
 
-<!-- WEEKEND SCHEDULE -->
+<!-- EVENT DETAILS -->
 <div class="section">
   <div class="card">
-    <h2>Wedding Weekend</h2>
-
+    <h2>Wedding Details</h2>
     <div class="grid">
-      <div class="box"><strong>Friday</strong><br>Welcome Dinner</div>
-      <div class="box"><strong>Saturday</strong><br>Ceremony + Reception</div>
-      <div class="box"><strong>Sunday</strong><br>Brunch & Farewell</div>
+      <div class="box">August 28, 2027</div>
+      <div class="box">4:00 PM</div>
+      <div class="box">Denver, Colorado</div>
     </div>
-
   </div>
 </div>
 
-<!-- GUEST EXPERIENCE -->
+<!-- WEEKEND -->
 <div class="section">
   <div class="card">
-    <h2>Guest Experience</h2>
-
-    <div class="grid">
-      <div class="box">
-        <strong>Dress Code</strong>
-        <p>Formal / Black Tie Optional</p>
-      </div>
-
-      <div class="box">
-        <strong>Gifts</strong>
-        <p>Your presence is the only gift we need.</p>
-      </div>
-
-      <div class="box">
-        <strong>Kids</strong>
-        <p>Adults only celebration</p>
-      </div>
+    <h2>Weekend Experience</h2>
+    <div class="timeline">
+      <div>Friday — Welcome Dinner</div>
+      <div>Saturday — Ceremony & Reception</div>
+      <div>Sunday — Brunch Farewell</div>
     </div>
-
   </div>
 </div>
 
@@ -334,15 +268,8 @@ footer{
 <div class="section">
   <div class="card">
     <h2>Venue</h2>
-    <iframe src="https://www.google.com/maps?q=Denver+Colorado&output=embed"></iframe>
-  </div>
-</div>
-
-<!-- RSVP -->
-<div class="section">
-  <div class="card">
-    <h2>RSVP</h2>
-    <a class="button" href="#">Respond Here</a>
+    <iframe src="https://www.google.com/maps?q=Denver+Colorado&output=embed"
+    style="width:100%;height:320px;border:0;border-radius:12px;"></iframe>
   </div>
 </div>
 
@@ -351,41 +278,14 @@ footer{
   Matilda & Nick • 2027
 </footer>
 
-<!-- AUDIO -->
-<button id="audioBtn" onclick="toggleAudio()">♪ Music Off</button>
-
-<audio id="audio" loop>
-  <source src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_c8b8b7b1c2.mp3?filename=soft-piano-ambient-112191.mp3" type="audio/mpeg">
-</audio>
-
 <script>
-
-/* countdown */
-const wedding = new Date("August 28, 2027 16:00:00").getTime();
+const weddingDate = new Date("August 28, 2027 16:00:00").getTime();
 
 setInterval(()=>{
   const now = new Date().getTime();
-  const d = Math.floor((wedding-now)/(1000*60*60*24));
+  const d = Math.floor((weddingDate-now)/(1000*60*60*24));
   document.getElementById("countdown").innerText = d + " days until forever";
 },1000);
-
-/* audio */
-let playing=false;
-
-function toggleAudio(){
-  const audio=document.getElementById("audio");
-
-  if(!playing){
-    audio.play();
-    playing=true;
-    document.getElementById("audioBtn").innerText="♪ Music On";
-  }else{
-    audio.pause();
-    playing=false;
-    document.getElementById("audioBtn").innerText="♪ Music Off";
-  }
-}
-
 </script>
 
 </body>
